@@ -1,0 +1,608 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+
+.header__title {
+  text-align: center;
+}
+
+.header__nav {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.nav__list {
+  display: inline-flex;
+  gap: 15px;
+}
+
+.nav__link {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.btn--primary:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+/* Стили для шапки */
+.header {
+  background-color: transparent; /* Белый фон для шапки */
+  padding: 10px 0;
+  display: flex;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Логотип */
+.header__logo .logo__link {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* Черный или темно-серый цвет для логотипа */
+}
+
+/* Навигация */
+.header__nav .nav__list {
+  display: flex;
+  gap: 20px;
+}
+
+.header__nav .nav__item .nav__link {
+  font-size: 16px;
+  color: #ffffffb5; /* Серый цвет для ссылок */
+  text-transform: uppercase; /* Заглавные буквы */
+  transition: color 0.3s ease;
+}
+
+/* Эффект наведения */
+.header__nav .nav__item .nav__link:hover {
+  color: #ffff; /* Темнее при наведении */
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  align-items: center;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('/static/img/begraund.webp'); 
+  background-size: cover; /* Заполняет всю секцию картиной */
+  background-position: center; /* Центрует картину */
+  background-repeat: no-repeat; /* Убирает повтор */
+  height: 100vh; /* Высота секции - 100% высоты экрана */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центровка по горизонтали */
+  align-items: center; /* Центровка по вертикали */
+  text-align: center;
+  position: relative;
+  color: #fff; /* Белый текст */
+}
+
+/* Затемнение фона для контрастности текста */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный слой */
+  z-index: 1;
+}
+
+/* Контент Hero */
+.hero__content {
+  position: relative;
+  top: 100px;
+  z-index: 2;
+}
+
+/* Заголовок BALANCE */
+.hero__title {
+  font-size: 100px;
+  font-weight: bold;
+  margin: 0 0 20px;
+  margin-bottom: 100px;
+  color: #fff; /* Белый текст */
+  text-transform: uppercase; /* Заглавные буквы */
+}
+
+.hero__image {
+  display: flex;
+  justify-content: center;
+}
+/* SVG изображение */
+.hero__image img {
+  width: 300px; /* Ширина изображения */
+  height: 300px; /* Высота изображения */
+  max-width: 100%; /* Адаптивность */
+}
+
+/* Карточки */
+.hero__cards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 250px;
+  text-align: center;
+  position: relative; /* Для позиционирования текста внутри карточки */
+  overflow: hidden; /* Скрываем элементы, выходящие за пределы карточки */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: opacity 0.3s ease; /* Добавляем анимацию для скрытия изображения */
+}
+
+.card__text {
+  font-size: 16px;
+  font-weight: bold;
+  width: 90%;
+  color: #050505;
+  margin: 0;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Прячем текст */
+  transition: opacity 0.3s ease; /* Анимация появления текста */
+  pointer-events: none; /* Исключаем текст из событий мыши */
+}
+
+.card__description {
+  font-size: 14px;
+  font-weight: bold;
+  width: 90%;
+  color: #050505;
+  margin: 0;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Прячем текст */
+  transition: opacity 0.3s ease; /* Анимация появления текста */
+  pointer-events: none; /* Исключаем текст из событий мыши */
+}
+
+.card:hover .card__image {
+  opacity: 0.3; /* При наведении затемняем картинку */
+}
+
+.card:hover .card__text {
+  opacity: 1; /* Показываем текст */
+}
+
+.card:hover .card__description {
+  opacity: 1; /* Показываем текст */
+}
+
+
+/* Секция About */
+.about {
+  padding: 100px 20px;
+  background-color: #000000; /* Светлый фон */
+}
+
+
+
+.about__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Ширина секции */
+  margin: 0 auto; /* Центровка секции */
+  flex-wrap: wrap; /* Адаптивность для маленьких экранов */
+  gap: 20px;
+  
+}
+
+.about__content {
+  flex: 1;
+  max-width: 600px;
+  z-index: 10;
+}
+
+.about__title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+  z-index: 10;
+}
+
+.about__text {
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.6;
+  z-index: 10;
+}
+
+.about__image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Скругление изображения */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  z-index: 10;
+}
+
+
+
+/* Секция Comics */
+
+.comics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px 50px;
+  color: #fff;
+}
+
+.comics__content {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.comics__title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.comics__description {
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+
+.comics__cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.comics__card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comics__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.comics__card__image {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.comics__card__text {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  color: #000;
+}
+
+.comics__card__description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Секция Bot */ 
+
+.bot {
+  background-image: url('/static/img/about_bg.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+  padding: 90px 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.bot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* Затемняющий слой */
+  z-index: 1;
+}
+
+.bot__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.bot__content {
+  flex: 1;
+  max-width: 600px;
+  text-align: center;
+}
+
+.bot__title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.conteinet_bot_puncts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Автоадаптивная сетка */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.bot__text {
+  font-size: 16px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 5px;
+  line-height: 1.6;
+}
+
+.bot__image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bot__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Merch section */
+
+.merch {
+  background-image: url('/static/img/merch_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.merch__title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.merch__description {
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.ant-carousel {
+  max-width: 810px;
+  margin: 0 auto;  /* Центрируем карусель */
+  position: relative;
+}
+
+.ant-carousel-hider {
+  overflow: hidden;
+}
+
+.ant-carousel-list {
+  display: flex;
+  justify-content: center; /* Центрируем элементы */
+  transition: transform 0.5s ease;
+}
+
+.ant-carousel-element {
+  display: block;
+  flex: 0 0 auto;
+  width: 270px;
+  text-align: center;
+}
+
+.merch__card {
+  flex-shrink: 0;
+  width: 150px;
+  height: 200px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.merch__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ant-carousel-arrow-left, .ant-carousel-arrow-right {
+  width: 22px;
+  height: 40px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.6;
+  z-index: 2;
+  display: block;
+}
+
+.ant-carousel-arrow-left {
+  left: -40px;
+  top: 40%;
+  background: url("ant-arrow-left.png") no-repeat;
+}
+
+.ant-carousel-arrow-right {
+  right: -40px;
+  top: 40%;
+  background: url("ant-arrow-right.png") no-repeat;
+}
+
+.ant-carousel-arrow-left:hover, .ant-carousel-arrow-right:hover {
+  opacity: 1.0;
+}
+
+.ant-carousel-dots {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  z-index: 2;
+  text-align: center;
+}
+
+span.ant-dot {
+  width: 10px;
+  height: 10px;
+  margin: 5px 7px;
+  background-color: #BBB;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Прокрутка второго ряда вправо */
+.ant-carousel-list {
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.merch__carousel:hover .merch__track {
+  animation-play-state: paused;
+}
+
+
+
+
+
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}

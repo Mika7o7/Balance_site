@@ -1,0 +1,60 @@
+# Среда разработки
+.env
+*.env
+
+# Файлы виртуального окружения
+venv/
+env/
+ENV/
+.venv/
+.pytest_cache/
+
+# Файлы Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+instance/
+
+# Логи
+*.log
+*.out
+*.err
+
+# Файлы конфигурации и базы данных
+*.sqlite3
+*.db
+*.db-journal
+
+# IDE/редакторы
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS системные файлы
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+*.orig
+
+# Сборка и зависимости
+build/
+dist/
+*.egg-info/
+*.spec
+
+# Frontend файлы
+node_modules/
+npm-debug.log
+yarn-error.log
+coverage/
+
+# Docker
+*.dockerfile
+docker-compose.override.yml
+
+# Flask-Specific
+instance/

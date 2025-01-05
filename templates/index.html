@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RISLIAM</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <!-- Логотип -->
+      <div class="header__logo">
+        <a href="/" class="logo__link"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" class="logo"></a>
+      </div>
+
+      <!-- Навигация -->
+      <nav class="header__nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#comics" class="nav__link">Comics</a></li>
+          <li class="nav__item"><a href="#bot" class="nav__link">Astro Bot</a></li>
+          <li class="nav__item"><a href="#merch" class="nav__link">Merch</a></li>
+          <li class="nav__item"><a href="#product" class="nav__link">Product</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">BALANCE</h1>
+        
+        <div class="hero__cards">
+          <div class="card">
+            <p class="card__text">Chat Bot Balance</p>
+            <p class="card__description">Ваш цифровой помощник для саморазвития и познания вселенной</p>
+            <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Card 1" class="card__image">
+          </div>
+          <div class="card">
+            <p class="card__text">Comics Portal</p>
+            <p class="card__description">Наша площадка для творчества — читайте, создавайте и делитесь комиксами</p>
+            <img src="{{ url_for('static', filename='img/card2.webp') }}" alt="Card 2" class="card__image">
+          </div>
+          <div class="card">
+            <p class="card__text">Merch Portal</p>
+            <p class="card__description">Ваш цифровой помощник для саморазвития и познания вселенной</p>
+            <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Card 3" class="card__image">
+          </div>
+          <div class="card">
+            <p class="card__text">Prodaction Portal</p>
+            <p class="card__description">Ваш цифровой помощник для саморазвития и познания вселенной</p>
+            <img src="{{ url_for('static', filename='img/card4.webp') }}" alt="Card 4" class="card__image">
+          </div>
+        </div>  
+      </div>
+    </section>
+
+
+      <!-- About section -->
+      <section class="about" id="about">
+        <div class="about__container">
+          <div class="about__content">
+            <h2 class="about__title">О нас</h2>
+            <p class="about__text">
+              Мы создаём уникальные цифровые продукты, которые вдохновляют и объединяют людей. 
+              Наша команда стремится к инновациям, творчеству и качеству, чтобы сделать ваш 
+              цифровой опыт увлекательным и полезным.
+              Мы создаём уникальные цифровые продукты, которые вдохновляют и объединяют людей. Наша команда стремится к инновациям, творчеству и качеству, чтобы сделать ваш цифровой опыт увлекательным и полезным.
+              Мы создаём уникальные цифровые продукты, которые вдохновляют и объединяют людей. Наша команда стремится к инновациям, творчеству и качеству, чтобы сделать ваш цифровой опыт увлекательным и полезным.
+              Мы создаём уникальные цифровые продукты, которые вдохновляют и объединяют людей. Наша команда стремится к инновациям, творчеству и качеству, чтобы сделать ваш цифровой опыт увлекательным и полезным.
+            </p>
+          </div>
+          <div class="about__image-container">
+            <img src="{{ url_for('static', filename='img/sozvezdiya.webp') }}" alt="About Us" class="about__image">
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Comics section -->
+      <section id="comics" class="comics">
+        <div class="comics__content">
+          <h2 class="comics__title">COMICS PORTAL</h2>
+          <p class="comics__description">
+            Добро пожаловать в мир комиксов! Читайте, создавайте и делитесь своими историями.
+          </p>
+            <div class="comics__cards">
+              <div class="comics__card">
+                <p class="comics__card__text">Комиксы для всех</p>
+                <!-- <p class="comics__card__description">Откройте для себя новые захватывающие истории и персонажей</p> -->
+                <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Comics for Everyone" class="comics__card__image">
+              </div>
+              <div class="comics__card">
+                <p class="comics__card__text">Создайте свои</p>
+                <!-- <p class="comics__card__description">Воплотите свои идеи в жизнь, создавая собственные комиксы</p> -->
+                <img src="{{ url_for('static', filename='img/card2.webp') }}" alt="Create Your Own" class="comics__card__image">
+              </div>
+              <div class="comics__card">
+                <p class="comics__card__text">Поделитесь</p>
+                <!-- <p class="comics__card__description">Публикуйте свои комиксы и делитесь ими с сообществом</p> -->
+                <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Share Your Creativity" class="comics__card__image">
+              </div>
+              <div class="comics__card">
+                <p class="comics__card__text">Популярные серии</p>
+                <!-- <p class="comics__card__description">Наслаждайтесь самыми читаемыми и любимыми комиксами</p> -->
+                <img src="{{ url_for('static', filename='img/card4.webp') }}" alt="Popular Series" class="comics__card__image">
+              </div>
+            </div>
+            <br>
+            <div class="comics__cards">
+              <div class="comics__card">
+                <p class="comics__card__text">Комиксы для всех</p>
+                <!-- <p class="comics__card__description">Откройте для себя новые захватывающие истории и персонажей</p> -->
+                <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Comics for Everyone" class="comics__card__image">
+              </div>
+              <div class="comics__card">
+                <p class="comics__card__text">Создайте свои</p>
+                <!-- <p class="comics__card__description">Воплотите свои идеи в жизнь, создавая собственные комиксы</p> -->
+                <img src="{{ url_for('static', filename='img/card2.webp') }}" alt="Create Your Own" class="comics__card__image">
+              </div>
+              <div class="comics__card">
+                <p class="comics__card__text">Поделитесь</p>
+                <!-- <p class="comics__card__description">Публикуйте свои комиксы и делитесь ими с сообществом</p> -->
+                <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Share Your Creativity" class="comics__card__image">
+              </div>
+              <div class="comics__card">
+                <p class="comics__card__text">Популярные серии</p>
+                <!-- <p class="comics__card__description">Наслаждайтесь самыми читаемыми и любимыми комиксами</p> -->
+                <img src="{{ url_for('static', filename='img/card4.webp') }}" alt="Popular Series" class="comics__card__image">
+              </div>
+            </div>
+            <br>
+        </div>
+      </section>
+
+      <!-- Bot Section -->
+      <section class="bot" id="bot">
+        <div class="bot__container">
+          <div class="bot__image-container">
+            <img src="{{ url_for('static', filename='img/photo_2025-01-05_19-26-50.png') }}" alt="bot img" class="bot__image">
+          </div>
+          <div class="bot__content">
+            <h2 class="bot__title">Chat Bot Balance</h2>
+            <div class="conteinet_bot_puncts">
+              <p class="bot__text">Мы создаём уникальные цифровые продукты, которые вдохновляют и объединяют людей.</p>
+              <p class="bot__text">Наша команда стремится к инновациям, творчеству и качеству.</p>
+              <p class="bot__text">Мы делаем ваш цифровой опыт увлекательным и полезным.</p>
+              <p class="bot__text">Вдохновляем людей на использование технологий для лучшей жизни.</p>
+              <p class="bot__text">Поддерживаем творчество и самореализацию каждого.</p>
+              <p class="bot__text">Создавайте будущее вместе с нами!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Merch Section -->
+    <section class="merch" id="merch">
+      <h2 class="merch__title">Наши Мерчи</h2>
+      <p class="merch__description">Погрузитесь в захватывающие истории с нашими комиксами. Каждый ряд — новые приключения!</p>
+    
+      <div class="ant-carousel">
+        <div class="ant-carousel-hider">
+          <ul class="ant-carousel-list" id="row1">
+            <!-- Первый ряд карусели -->
+            <li class="ant-carousel-element">
+              <div class="comics__card">
+                <p class="comics__card__text">Комиксы для всех 1</p>
+                <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Comics for Everyone" class="comics__card__image">
+              </div>
+            </li>
+            <li class="ant-carousel-element">
+              <div class="comics__card">
+                  <p class="comics__card__text">Новые истории 2</p>
+                  <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="New Stories" class="comics__card__image">
+              </div>
+          </li>
+          <li class="ant-carousel-element">
+              <div class="comics__card">
+                  <p class="comics__card__text">Захватывающие 3</p>
+                  <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Exciting Adventures" class="comics__card__image">
+              </div>
+          </li>
+
+          <!-- Второй ряд карусели (прокручивается вправо) -->
+          <li class="ant-carousel-element">
+              <div class="comics__card">
+                  <p class="comics__card__text">Захватывающие 4</p>
+                  <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Exciting Adventures" class="comics__card__image">
+              </div>
+          </li>
+
+            <!-- Другие элементы первого ряда -->
+          </ul>
+        </div>
+      </div>
+      <br>  
+      <div class="ant-carousel">
+        <div class="ant-carousel-hider">
+          <ul class="ant-carousel-list" id="row2">
+            <!-- Второй ряд карусели (прокручивается в обратную сторону) -->
+            <li class="ant-carousel-element">
+              <div class="comics__card">
+                <p class="comics__card__text">Захватывающие 4</p>
+                <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Exciting Adventures" class="comics__card__image">
+              </div>
+            </li>
+            <li class="ant-carousel-element">
+              <div class="comics__card">
+                  <p class="comics__card__text">Комиксы для всех 5</p>
+                  <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Comics for Everyone" class="comics__card__image">
+              </div>
+          </li>
+          <li class="ant-carousel-element">
+              <div class="comics__card">
+                  <p class="comics__card__text">Новые истории 6</p>
+                  <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="New Stories" class="comics__card__image">
+              </div>
+          </li>
+
+          <!-- Третий ряд карусели -->
+          <li class="ant-carousel-element">
+              <div class="comics__card">
+                  <p class="comics__card__text">Захватывающие 7</p>
+                  <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Exciting Adventures" class="comics__card__image">
+              </div>
+          </li>
+            <!-- Другие элементы второго ряда -->
+          </ul>
+        </div>
+      </div>  
+    </section>
+
+
+
+    <!-- Product section -->
+    <section id="product" class="comics">
+      <div class="comics__content">
+        <h2 class="comics__title">Наши Продукт</h2>
+        <p class="comics__description">
+          Добро пожаловать в мир комиксов! Читайте, создавайте и делитесь своими историями.
+        </p>
+          <div class="comics__cards">
+            <div class="comics__card">
+              <p class="comics__card__text">продукт для всех</p>
+              <!-- <p class="comics__card__description">Откройте для себя новые захватывающие истории и персонажей</p> -->
+              <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Comics for Everyone" class="comics__card__image">
+            </div>
+            <div class="comics__card">
+              <p class="comics__card__text">Создайте свои</p>
+              <!-- <p class="comics__card__description">Воплотите свои идеи в жизнь, создавая собственные комиксы</p> -->
+              <img src="{{ url_for('static', filename='img/card2.webp') }}" alt="Create Your Own" class="comics__card__image">
+            </div>
+            <div class="comics__card">
+              <p class="comics__card__text">Поделитесь</p>
+              <!-- <p class="comics__card__description">Публикуйте свои комиксы и делитесь ими с сообществом</p> -->
+              <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Share Your Creativity" class="comics__card__image">
+            </div>
+            <div class="comics__card">
+              <p class="comics__card__text">Популярные серии</p>
+              <!-- <p class="comics__card__description">Наслаждайтесь самыми читаемыми и любимыми комиксами</p> -->
+              <img src="{{ url_for('static', filename='img/card4.webp') }}" alt="Popular Series" class="comics__card__image">
+            </div>
+          </div>
+          <br>
+          <div class="comics__cards">
+            <div class="comics__card">
+              <p class="comics__card__text">продукт для всех</p>
+              <!-- <p class="comics__card__description">Откройте для себя новые захватывающие истории и персонажей</p> -->
+              <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Comics for Everyone" class="comics__card__image">
+            </div>
+            <div class="comics__card">
+              <p class="comics__card__text">Создайте свои</p>
+              <!-- <p class="comics__card__description">Воплотите свои идеи в жизнь, создавая собственные комиксы</p> -->
+              <img src="{{ url_for('static', filename='img/card2.webp') }}" alt="Create Your Own" class="comics__card__image">
+            </div>
+            <div class="comics__card">
+              <p class="comics__card__text">Поделитесь</p>
+              <!-- <p class="comics__card__description">Публикуйте свои комиксы и делитесь ими с сообществом</p> -->
+              <img src="{{ url_for('static', filename='img/card3.webp') }}" alt="Share Your Creativity" class="comics__card__image">
+            </div>
+            <div class="comics__card">
+              <p class="comics__card__text">Популярные серии</p>
+              <!-- <p class="comics__card__description">Наслаждайтесь самыми читаемыми и любимыми комиксами</p> -->
+              <img src="{{ url_for('static', filename='img/card4.webp') }}" alt="Popular Series" class="comics__card__image">
+            </div>
+          </div>
+          <br>
+      </div>
+    </section>
+      
+    </main>
+
+  
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 RISLIAM. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>new Ant()</script>
+</body>
+</html>
