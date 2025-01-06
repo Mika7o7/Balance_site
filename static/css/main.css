@@ -40,43 +40,9 @@ table {
   border-spacing: 0;
 }
 
-
-
-
 .header__title {
   text-align: center;
 }
-
-.header__nav {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.nav__list {
-  display: inline-flex;
-  gap: 15px;
-}
-
-.nav__link {
-  color: #fff;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: #fff;
-  border-radius: 5px;
-}
-
-.btn--primary:hover {
-  background-color: #0056b3;
-}
-
-
 
 
 /* Стили для шапки */
@@ -332,7 +298,7 @@ table {
   margin-top: 50px;
 }
 
-.comics__title {
+.type_title {
   font-size: 48px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -340,7 +306,7 @@ table {
   text-transform: uppercase;
 }
 
-.comics__description {
+.type_description {
   font-size: 18px;
   font-weight: normal;
   margin-bottom: 40px;
@@ -348,14 +314,14 @@ table {
 }
 
 
-.comics__cards {
+.type_cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.comics__card {
+.type_card {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -365,25 +331,27 @@ table {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.comics__card:hover {
+.type_card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.comics__card__image {
+.type_card__image {
   width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ddd;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: opacity 0.3s ease; /* Добавляем анимацию для скрытия изображения */
 }
 
-.comics__card__text {
+.type_card__text {
   font-size: 16px;
   font-weight: bold;
   margin: 10px 0 5px;
   color: #000;
 }
 
-.comics__card__description {
+.type_card__description {
   font-size: 14px;
   color: #555;
   margin-bottom: 10px;
@@ -468,14 +436,11 @@ table {
 /* Merch section */
 
 .merch {
-  background-image: url('/static/img/merch_bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   padding: 60px 20px;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
 }
 
 .merch__title {
@@ -514,22 +479,6 @@ table {
   flex: 0 0 auto;
   width: 270px;
   text-align: center;
-}
-
-.merch__card {
-  flex-shrink: 0;
-  width: 150px;
-  height: 200px;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.merch__card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .ant-carousel-arrow-left, .ant-carousel-arrow-right {
@@ -596,6 +545,383 @@ span.ant-dot {
 
 
 
+
+
+
+/* Для планшетов (экран шириной от 768px до 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Контент Hero */
+  .hero__content {
+    position: relative;
+    top: 50px;
+    z-index: 2;
+  }
+
+  .header__nav .nav__list {
+    gap: 10px;
+  }
+ 
+  .header__nav .nav__item .nav__link {
+    font-size: 12px;
+    color: #ffffffb5; /* Серый цвет для ссылок */
+    text-transform: uppercase; /* Заглавные буквы */
+    transition: color 0.3s ease;
+  }
+
+  .logo {
+    width: 150px;
+    height: auto;
+    align-items: center;
+  }
+ 
+  .hero__title {
+    font-size: 40px;
+    margin-bottom: 0px;
+    color: #fff; /* Белый текст */
+    text-transform: uppercase; /* Заглавные буквы */
+  }
+
+  .hero__cards {
+    flex-wrap: wrap;
+    margin: 30px;
+    gap: 10px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    height: 200px;
+    text-align: center;
+    position: relative; /* Для позиционирования текста внутри карточки */
+    overflow: hidden; /* Скрываем элементы, выходящие за пределы карточки */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.3s ease; /* Добавляем анимацию для скрытия изображения */
+  }
+  
+  .card__text {
+    font-size: 14px;
+  }
+  
+  .card__description {
+    font-size: 12px;
+  }
+
+  .about__container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about__image {
+    display: none;
+  }
+
+  .bot {
+    padding: 30px 20px;
+    height: auto;
+  }
+  
+  .bot__container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .bot__content {
+    flex: 1;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .bot__title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .conteinet_bot_puncts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Автоадаптивная сетка */
+    gap: 5px;
+    margin-top: 20px;
+  }
+  
+  .bot__text {
+    font-size: 14px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 5px;
+    line-height: 1.6;
+  }
+  
+  .bot__image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bot__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .bot__image {
+    width: 300px;
+    height: auto;
+  }
+
+  .type_card {
+    width: 120px;
+    height: 160px;
+  }
+
+  .ant-carousel-element {
+    width: 130px;
+  }
+
+}
+
+/* Для мобильных устройств (экран шириной до 768px) */
+@media (max-width: 768px) {
+  .hero__cards {
+    flex-wrap: wrap;
+    margin: 30px;
+    gap: 10px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 150px;
+    text-align: center;
+    position: relative; /* Для позиционирования текста внутри карточки */
+    overflow: hidden; /* Скрываем элементы, выходящие за пределы карточки */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.3s ease; /* Добавляем анимацию для скрытия изображения */
+  }
+  
+  .card__text {
+    font-size: 12px;
+  }
+  
+  .card__description {
+    font-size: 8px;
+  }
+
+  .about {
+    padding: 50px 20px;
+  }
+
+  .about__content {
+    max-width: 450px;
+  }
+
+  .type_title {
+    font-size: 28px;
+  }
+
+  .type_description {
+    font-size: 16px;
+    max-width: 450px;
+  }
+
+
+  .type_cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .type_card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .type_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .type_card__image {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.3s ease; /* Добавляем анимацию для скрытия изображения */
+  }
+  
+  .type_card__text {
+    font-size: 10px;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #000;
+  }
+  
+  .type_card__description {
+    font-size: 8px;
+    color: #555;
+  }
+
+  .bot__content {
+    max-width: 450px;
+  }
+
+  .merch {
+    padding: 50px 20px;
+  }
+
+  .comics__content {
+    margin: 0;
+    max-width: 450px;
+  }
+
+  .merch__title {
+    font-size: 28px;
+  }
+
+ 
+  .merch__description {
+    font-size: 16px;
+    max-width: 450px;
+  }
+
+  .ant-carousel-element {
+    width: 110px;
+  }
+}
+
+
+
+/* Для очень маленьких экранов (до 480px) */
+@media (max-width: 450px) {
+
+ 
+  .logo {
+    width: 80px;
+  }
+
+  .header__nav .nav__list {
+    gap: 8px;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+  }
+ 
+  .header__nav .nav__item .nav__link {
+    font-size: 8px;
+    color: #ffffffb5; /* Серый цвет для ссылок */
+    text-transform: uppercase; /* Заглавные буквы */
+    transition: color 0.3s ease;
+  }
+
+
+  .card {
+    width: 60px;
+  }
+
+  .type_cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .type_card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 120px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ant-carousel-element {
+    width: 130px;
+  }
+
+  .card__text {
+    font-size: 10px;
+  }
+
+  .card__description {
+    font-size: 6px;
+  }
+
+  
+  .about__text {
+    font-size: 10px;
+    max-width: 300px;
+  }
+
+  .type_description {
+    font-size: 10px;
+  }
+
+  .comics__content {
+    max-width: 300px;
+  }
+
+}
 
 
 
